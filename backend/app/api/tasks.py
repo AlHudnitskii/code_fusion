@@ -20,5 +20,4 @@ async def read_task(task_id: str):
     raise HTTPException(status_code=404, detail="Task not found")
 
 async def notify_task_creation(task: dict):
-    # Здесь можно добавить логику уведомления
     print(f"Task created: {task}")
