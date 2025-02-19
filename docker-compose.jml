@@ -5,24 +5,24 @@ services:
     build: ./backend
     ports:
       - "8000:8000"
-    environment:
-      - MONGO_URL=mongodb://mongo:27017
+    env_file:
+      - .env
     depends_on:
-      - mongo
-
-  mongo:
-    image: mongo:latest
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo_data:/data/db
+      - db
 
   frontend:
     build: ./frontend
     ports:
       - "3000:3000"
-    depends_on:
-      - backend
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: your_user
+      POSTGRES_PASSWORD: your_password
+      POSTGRES_DB: your_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
 
 volumes:
-  mongo_data:
+  postgres_data:
