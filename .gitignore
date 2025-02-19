@@ -1,4 +1,20 @@
+# Игнорируем виртуальное окружение
+venv/
 .env
+.env.example
+
+# Игнорируем PyCharm
 .idea/
+
+# Игнорируем кеши Python
 __pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Игнорируем node_modules
 node_modules/
+
+# Игнорируем логи и временные файлы
+logs/
+*.log
