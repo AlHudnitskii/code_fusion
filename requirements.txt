@@ -1,0 +1,12 @@
+fastapi[all]
+uvicorn
+sqlalchemy
+asyncpg
+pymongo
+motor
+celery
+redis
+passlib[bcrypt]
+python-jose[cryptography]
+pytest
+httpx
